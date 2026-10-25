@@ -1,0 +1,32 @@
+[
+  {
+    "id": "doc_rag_architectures",
+    "title": "RAG Architectures: Chunking, Embedding Models, and Hybrid Search",
+    "content": "Retrieval-Augmented Generation (RAG) grounds Large Language Models on domain-specific data. Optimal chunking strategies typically range between 256 and 512 tokens with a 10% to 20% overlap to preserve semantic context across boundaries. Dense embeddings (such as OpenAI's text-embedding-3-small or BGE-large) excel at capturing high-level conceptual similarity, while sparse algorithms like BM25 excel at exact keyword matching (such as part numbers, names, and acronyms). In production, Hybrid Search combines dense vector similarity and sparse BM25 scores using Reciprocal Rank Fusion (RRF). Furthermore, a two-stage retrieval pipeline using a cross-encoder re-ranker (e.g., Cohere Rerank) on the top 20 candidate chunks significantly boosts Precision@K.",
+    "category": "ai_engineering"
+  },
+  {
+    "id": "doc_agentic_patterns",
+    "title": "Agentic Design Patterns: ReAct, Tool Calling, and Reflection",
+    "content": "Modern AI Agents utilize tool calling to interact with external environments. While early implementations relied on ReAct (Reasoning + Acting) prompts with custom text delimiters, modern LLMs natively support structured function calling via JSON schema. In native tool calling, the model outputs structured JSON matching the declared tool parameters, and the client application executes the tool and injects the output back as a 'tool' role message. Key reliability patterns include: (1) Error feedback loops where tool execution exceptions are returned to the model so it can self-correct, (2) Max iteration bounds (e.g., 5 to 10 iterations) to halt runaway loops, and (3) Atomic conversation memory preservation to ensure tool calls always pair with tool responses.",
+    "category": "agent_architecture"
+  },
+  {
+    "id": "doc_eval_metrics",
+    "title": "Evaluation Metrics for Retrieval-Augmented Generation",
+    "content": "Evaluating RAG pipelines requires decoupling retrieval quality from generation quality. The industry standard RAG Triad framework comprises three pillars: (1) Context Relevance: assesses whether the retrieved document chunks contain only necessary information relevant to the user's query, minimizing noise; (2) Groundedness (or Faithfulness): measures whether every claim made in the generated response is strictly supported by the retrieved context, guarding against hallucinations; (3) Answer Relevance: measures how directly and completely the generated answer addresses the original user question. Automated evaluation pipelines commonly leverage LLM-as-a-Judge alongside G-Eval or Ragas frameworks.",
+    "category": "evaluations"
+  },
+  {
+    "id": "doc_ai_safety",
+    "title": "AI Safety and Production Guardrails in Agentic Systems",
+    "content": "Deploying agentic systems to production requires strict runtime guardrails. First, arbitrary code execution tools must never use unrestricted eval() or exec(); instead, math and expression tools should parse Abstract Syntax Trees (AST) with whitelisted operators and strict size constraints. Second, file operations must be sandboxed to a whitelisted root directory with canonical path checks (os.path.realpath) to prevent directory traversal attacks (e.g. '../../etc/passwd'). Third, rate limiting and token consumption guards must enforce maximum step counts per interaction to mitigate infinite execution loops and API budget exhaustion.",
+    "category": "security"
+  },
+  {
+    "id": "doc_company_policies",
+    "title": "ACME AI Labs: Engineering Remote Work and Equipment Policy",
+    "content": "ACME AI Labs operates on a hybrid-remote model. Core collaboration hours are 10:00 AM to 3:00 PM Eastern Time (ET), during which engineers are expected to be available for synchronous team standups and design reviews. Every full-time engineer receives an annual home office equipment stipend of $1,500 for monitors, ergonomic seating, and peripherals. Additionally, each engineer is allocated a $2,000 annual professional development stipend for AI conferences, technical books, and cloud certifications. Production code deployments require passing automated unit tests, static type checks (mypy), and approvals from at least two senior team members.",
+    "category": "company_policy"
+  }
+]

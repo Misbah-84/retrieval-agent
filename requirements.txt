@@ -1,0 +1,17 @@
+# Core LLM SDK & Function Calling
+openai>=1.50.0
+
+# Environment Variable Management
+python-dotenv>=1.0.0
+
+# Terminal UI & Beautiful Formatting
+rich>=13.0.0
+
+# Numerical Vector Similarity & In-memory Vector Store
+numpy>=1.24.0
+
+# Data Validation & Typing
+pydantic>=2.0.0
+
+# Optional: Testing Framework
+pytest>=8.0.0
