@@ -252,4 +252,4 @@ If you are preparing for AI Engineering or LLM Application Developer interviews,
 ---
 
 ## 📄 License
-MIT License. Created for AI Engineering internship portfolios. Feel free to fork, customize, and extend!
+MIT License.Feel free to fork, customize, and extend!
