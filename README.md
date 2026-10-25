@@ -137,7 +137,7 @@ The sliding-window buffer operates at the **Turn** boundary rather than the raw 
 ### 2. Installation
 Clone the repository and install the minimal dependencies:
 ```bash
-git clone https://github.com/your-username/retrieval-agent.git
+git clone https://github.com/Misbah-84/retrieval-agent.git
 cd retrieval-agent
 
 python -m venv venv
